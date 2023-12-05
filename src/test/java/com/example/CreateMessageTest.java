@@ -94,7 +94,7 @@ public class CreateMessageTest {
      *  Response Body: 
      */
     @Test
-    public void createMessageMessageGreaterThan254() throws IOException, InterruptedException {
+    public void createMessageMessageGreaterThan255() throws IOException, InterruptedException {
     	String json = "{\"posted_by\":9999,"
     			+ "\"message_text\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\","
     			+ "\"time_posted_epoch\": 1669947792}";

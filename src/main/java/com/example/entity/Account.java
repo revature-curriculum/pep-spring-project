@@ -56,14 +56,14 @@ public class Account {
      * Properly named getters and setters are necessary for Jackson ObjectMapper to work. You may use them as well.
      * @return accountId
      */
-    public Integer getaccountId() {
+    public Integer getAccountId() {
         return accountId;
     }
     /**
      * Properly named getters and setters are necessary for Jackson ObjectMapper to work. You may use them as well.
      * @param accountId
      */
-    public void setaccountId(Integer accountId) {
+    public void setAccountId(Integer accountId) {
         this.accountId = accountId;
     }
     /**

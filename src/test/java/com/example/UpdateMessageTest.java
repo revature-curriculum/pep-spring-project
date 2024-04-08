@@ -49,7 +49,7 @@ public class UpdateMessageTest {
      */
     @Test
     public void updateMessageSuccessful() throws IOException, InterruptedException {
-    	String json = "{\"message_text\": \"text changed\"}";
+    	String json = "{\"messageText\": \"text changed\"}";
         HttpRequest postMessageRequest = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/messages/9999"))
                 .method("PATCH", HttpRequest.BodyPublishers.ofString(json))
@@ -72,7 +72,7 @@ public class UpdateMessageTest {
      */
     @Test
     public void updateMessageMessageNotFound() throws IOException, InterruptedException {
-    	String json = "{\"message_text\": \"text changed\"}";
+    	String json = "{\"messageText\": \"text changed\"}";
         HttpRequest postMessageRequest = HttpRequest.newBuilder()
         		.uri(URI.create("http://localhost:8080/messages/5050"))
                 .method("PATCH", HttpRequest.BodyPublishers.ofString(json))
@@ -93,7 +93,7 @@ public class UpdateMessageTest {
      */
     @Test
     public void updateMessageMessageStringEmpty() throws IOException, InterruptedException {
-    	String json = "{\"message_text\": \"\"}";
+    	String json = "{\"messageText\": \"\"}";
         HttpRequest postMessageRequest = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/messages/9999"))
                 .method("PATCH", HttpRequest.BodyPublishers.ofString(json))
@@ -113,7 +113,7 @@ public class UpdateMessageTest {
      */
     @Test
     public void updateMessageMessageTooLong() throws IOException, InterruptedException {
-    	String json = "{\"message_text\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}";
+    	String json = "{\"messageText\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}";
         HttpRequest postMessageRequest = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/messages/9999"))
                 .method("PATCH", HttpRequest.BodyPublishers.ofString(json))

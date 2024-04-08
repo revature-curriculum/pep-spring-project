@@ -152,7 +152,7 @@ public class SpringTest {
         Assertions.assertTrue(accountList1.size() == 3, "There should be no messages in the " +
                 "JPARepository on startup.");
         Message actualMessage = (Message) saveMethod.invoke(repository, testMessage);
-        Assertions.assertEquals(actualMessage.getMessage_text(), expectedText);
+        Assertions.assertEquals(actualMessage.getMessageText(), expectedText);
         List<Account> accountList2 = (List<Account>) findAllMethod.invoke(repository, new Object[]{});
         Assertions.assertTrue(accountList2.size() > 3, "The message should be addable to the " +
                 "JPARepository.");

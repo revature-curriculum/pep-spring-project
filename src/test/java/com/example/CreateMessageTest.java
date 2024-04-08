@@ -51,7 +51,7 @@ public class CreateMessageTest {
      */
     @Test
     public void createMessageSuccessful() throws IOException, InterruptedException {
-    	String json = "{\"posted_by\":9999,\"message_text\": \"hello message\",\"time_posted_epoch\": 1669947792}";
+    	String json = "{\"postedBy\":9999,\"messageText\": \"hello message\",\"timePostedEpoch\": 1669947792}";
         HttpRequest postMessageRequest = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/messages"))
                 .POST(HttpRequest.BodyPublishers.ofString(json))
@@ -74,7 +74,7 @@ public class CreateMessageTest {
      */
     @Test
     public void createMessageMessageTextBlank() throws IOException, InterruptedException {
-    	String json = "{\"posted_by\":9999,\"message_text\": \"\",\"time_posted_epoch\": 1669947792}";
+    	String json = "{\"postedBy\":9999,\"messageText\": \"\",\"timePostedEpoch\": 1669947792}";
         HttpRequest postMessageRequest = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/messages"))
                 .POST(HttpRequest.BodyPublishers.ofString(json))
@@ -95,9 +95,9 @@ public class CreateMessageTest {
      */
     @Test
     public void createMessageMessageGreaterThan255() throws IOException, InterruptedException {
-    	String json = "{\"posted_by\":9999,"
-    			+ "\"message_text\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\","
-    			+ "\"time_posted_epoch\": 1669947792}";
+    	String json = "{\"postedBy\":9999,"
+    			+ "\"messageText\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\","
+    			+ "\"timePostedEpoch\": 1669947792}";
         HttpRequest postMessageRequest = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/messages"))
                 .POST(HttpRequest.BodyPublishers.ofString(json))
@@ -116,7 +116,7 @@ public class CreateMessageTest {
      */
     @Test
     public void createMessageUserNotInDb() throws IOException, InterruptedException {
-    	String json = "{\"posted_by\":5050,\"message_text\": \"hello message\",\"time_posted_epoch\": 1669947792}";
+    	String json = "{\"postedBy\":5050,\"messageText\": \"hello message\",\"timePostedEpoch\": 1669947792}";
         HttpRequest postMessageRequest = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/messages"))
                 .POST(HttpRequest.BodyPublishers.ofString(json))
